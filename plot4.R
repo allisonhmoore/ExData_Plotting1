@@ -37,13 +37,13 @@ par(mfcol = c(2, 2), mar = c(4, 4, 2, 1), oma = c(0, 0, 2, 0))
 with(relpower, {
         plot(relpower$DT, relpower$Global_active_power, type = "l", ylab = "Global Active Power", xlab ="")
 
-        plot(relpower$DT, relpower$Voltage, type = "l", ylab = "Voltage", xlab ="datetime")
-
         plot(DT, Sub_metering_1, main = "", type = "l", "ylab" = "Energy sub metering")
         lines(DT, Sub_metering_2, col = "red")
         lines(DT, Sub_metering_3, col = "blue")
         legend("topright", lty = 1, col = c("black", "blue", "red"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 
-        plot(relpower$DT, relpower$Global_reactive_power, type = "l", ylab = "Voltage", xlab ="datetime")
+        plot(relpower$DT, relpower$Voltage, type = "l", ylab = "Voltage", xlab ="datetime")
+        
+        plot(relpower$DT, relpower$Global_reactive_power, type = "l", ylab = "Voltage", xlab = "datetime")
         })
 dev.off()
