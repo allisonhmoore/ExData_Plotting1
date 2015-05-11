@@ -11,11 +11,12 @@ fileURL <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_powe
 download.file(fileURL, destfile="./data/power.zip", method="curl")
 unzip("./data/power.zip", exdir="./data")
 
-classes <- c("factor", "factor", rep("numeric", 7))
+classes <- c("character", "character", rep("numeric", 7))
 names <- c("Date", "Time", "Global_active_power", "Global_reactive_power", "Voltage", "Global_intensity", "Sub_metering_1", "Sub_metering_2", "Sub_metering_3")
+nastrings <- c("?", "'?'")
 
 # Load the main data in with column names and classes
-power <- read.table("./data/household_power_consumption.txt", sep =";", skip = 1, na.strings = "?", col.names = names, colClasses = classes) 
+power <- read.table("./data/household_power_consumption.txt", sep =";", skip = 1, na.strings = nastrings, col.names = names, colClasses = classes)
 
 # Convert date and time columns, and subset data to only include relevant dates
 power$Date <- as.Date(power$Date, "%d/%m/%Y")

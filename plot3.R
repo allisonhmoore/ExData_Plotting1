@@ -33,8 +33,8 @@ rm(power)
 # Plot 3 is a plot compares the three sub-meterings
 # Note that the default size is 480px by 480 px
 png(file = "plot3.png")
-with(relpower, plot(DT, Sub_metering_1, main = "", type = "l", "ylab" = "Energy sub metering"))
+with(relpower, plot(DT, Sub_metering_1, main = "", type = "l", "ylab" = "Energy sub metering", xlab = ""))
 with(relpower, lines(DT, Sub_metering_2, col = "red"))
 with(relpower, lines(DT, Sub_metering_3, col = "blue"))
-legend("topright", pch = 1, col = c("black", "blue", "red"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+legend("topright", lty = 1, col = c("black", "blue", "red"), legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
 dev.off()
